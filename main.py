@@ -2,7 +2,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QPushButton, QVBoxLayout)
 
 from config import *
-from test import * # TestWindow
+from test import * # Importa TestWindow correctamente
 
 
 class MainWindow(QWidget):
@@ -25,7 +25,6 @@ class MainWindow(QWidget):
         self.main_layout.addWidget(self.instructions_label, alignment=Qt.AlignLeft)
         self.main_layout.addWidget(self.btn_next, alignment=Qt.AlignCenter)
 
-
         self.setLayout(self.main_layout)
 
     def config_window(self):
@@ -38,7 +37,7 @@ class MainWindow(QWidget):
 
     def next_click(self):
         self.hide()
-        # self.test = TestWindow()     
+        self.test = TestWindow() # Al quitar el '#', la ventana dos se crea y se muestra en pantalla     
 
 
 app = QApplication([])
